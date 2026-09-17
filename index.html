@@ -2,123 +2,264 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
 
-<title>Deenu Kataria Tools</title>
+<title>Deenu Kataria Tools — Free Online Tools</title>
+<meta name="description" content="Free online tools by Deenu Kataria. Text, image, developer, calculator and utility tools.">
 
 <style>
-*{
-  box-sizing:border-box;
-}
+*{box-sizing:border-box}
+
+html{scroll-behavior:smooth}
 
 body{
-  margin:0;
-  font-family:Arial,sans-serif;
-  background:#0f172a;
-  color:white;
+margin:0;
+font-family:Inter,Arial,sans-serif;
+background:#070b16;
+color:#f8fafc;
+line-height:1.5;
 }
 
 header{
-  text-align:center;
-  padding:35px 15px;
-  background:#111827;
+background:
+radial-gradient(circle at top left,#2563eb55,transparent 35%),
+radial-gradient(circle at top right,#7c3aed55,transparent 35%),
+#0b1020;
+padding:65px 20px 55px;
+text-align:center;
+border-bottom:1px solid #26324d;
 }
 
-header h1{
-  margin:0;
-  font-size:32px;
+.logo{
+font-size:42px;
+font-weight:900;
+letter-spacing:-1px;
 }
 
-header p{
-  color:#94a3b8;
+.logo span{
+background:linear-gradient(90deg,#60a5fa,#a78bfa);
+-webkit-background-clip:text;
+color:transparent;
+}
+
+.tagline{
+color:#aab5ca;
+font-size:17px;
+margin-top:8px;
 }
 
 nav{
-  background:#020617;
-  padding:15px;
-  text-align:center;
-  position:sticky;
-  top:0;
+position:sticky;
+top:0;
+z-index:20;
+background:#080d1aee;
+backdrop-filter:blur(15px);
+border-bottom:1px solid #202b43;
+padding:14px;
+text-align:center;
 }
 
 nav a{
-  color:white;
-  text-decoration:none;
-  margin:0 12px;
-  font-weight:bold;
+color:#dbeafe;
+text-decoration:none;
+margin:0 12px;
+font-weight:700;
+font-size:14px;
 }
+
+nav a:hover{color:#60a5fa}
 
 .container{
-  max-width:1100px;
-  margin:auto;
-  padding:20px;
+max-width:1200px;
+margin:auto;
+padding:25px 18px;
 }
 
-#search{
-  width:100%;
-  padding:15px;
-  border:0;
-  border-radius:12px;
-  margin-bottom:25px;
-  font-size:16px;
+.hero{
+text-align:center;
+padding:35px 10px;
+}
+
+.hero h1{
+font-size:34px;
+margin:0 0 10px;
+}
+
+.hero p{
+color:#94a3b8;
+max-width:650px;
+margin:auto;
+}
+
+.search{
+width:100%;
+max-width:750px;
+display:block;
+margin:25px auto;
+padding:17px 20px;
+border-radius:15px;
+border:1px solid #334155;
+background:#111827;
+color:white;
+font-size:16px;
+outline:none;
+}
+
+.search:focus{
+border-color:#60a5fa;
+}
+
+.categories{
+display:flex;
+gap:10px;
+justify-content:center;
+flex-wrap:wrap;
+margin:20px 0 30px;
+}
+
+.category{
+padding:9px 16px;
+border:1px solid #334155;
+border-radius:30px;
+background:#111827;
+color:#cbd5e1;
+cursor:pointer;
+font-weight:700;
+}
+
+.category:hover{
+background:#1e293b;
+color:white;
 }
 
 .grid{
-  display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
-  gap:18px;
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+gap:20px;
 }
 
 .card{
-  background:#1e293b;
-  padding:20px;
-  border-radius:15px;
+background:linear-gradient(145deg,#111827,#0d1424);
+border:1px solid #26344e;
+border-radius:18px;
+padding:22px;
+box-shadow:0 10px 30px #0003;
+}
+
+.card:hover{
+transform:translateY(-3px);
+border-color:#3b82f6;
 }
 
 .card h2{
-  margin-top:0;
+margin:0 0 12px;
+font-size:21px;
 }
 
-input,textarea{
-  width:100%;
-  padding:11px;
-  margin:5px 0;
-  border:0;
-  border-radius:8px;
+.card p{
+color:#94a3b8;
+font-size:14px;
+}
+
+input,textarea,select{
+width:100%;
+padding:12px;
+margin:6px 0;
+border:1px solid #334155;
+border-radius:10px;
+background:#0b1220;
+color:white;
+font-size:15px;
+outline:none;
 }
 
 textarea{
-  min-height:100px;
+min-height:110px;
+resize:vertical;
 }
 
 button{
-  width:100%;
-  padding:11px;
-  margin-top:7px;
-  border:0;
-  border-radius:8px;
-  font-weight:bold;
-  cursor:pointer;
+width:100%;
+padding:12px;
+margin-top:8px;
+border:0;
+border-radius:10px;
+background:linear-gradient(90deg,#2563eb,#7c3aed);
+color:white;
+font-weight:800;
+cursor:pointer;
+}
+
+button:hover{
+opacity:.9;
+}
+
+.secondary{
+background:#1e293b;
 }
 
 .result{
-  margin-top:10px;
-  padding:10px;
-  background:#0f172a;
-  border-radius:8px;
-  min-height:20px;
-  word-break:break-word;
+margin-top:12px;
+padding:12px;
+background:#070d19;
+border:1px solid #26344e;
+border-radius:10px;
+min-height:20px;
+word-break:break-word;
+white-space:pre-wrap;
+}
+
+.copy{
+margin-top:8px;
+background:#1e293b;
 }
 
 section{
-  padding:30px 0;
+padding:25px 0;
+}
+
+.section-title{
+font-size:28px;
+margin-bottom:8px;
+}
+
+.section-sub{
+color:#94a3b8;
+margin-bottom:22px;
+}
+
+.about{
+background:#0d1424;
+border:1px solid #26344e;
+border-radius:18px;
+padding:28px;
 }
 
 footer{
-  text-align:center;
-  padding:30px;
-  background:#020617;
-  color:#94a3b8;
+margin-top:40px;
+padding:35px 20px;
+text-align:center;
+background:#030712;
+border-top:1px solid #202b43;
+color:#94a3b8;
+}
+
+.badge{
+display:inline-block;
+padding:5px 9px;
+border-radius:20px;
+background:#172554;
+color:#93c5fd;
+font-size:11px;
+font-weight:bold;
+margin-bottom:10px;
+}
+
+@media(max-width:600px){
+.logo{font-size:32px}
+.hero h1{font-size:27px}
+nav a{margin:0 6px;font-size:12px}
+.grid{grid-template-columns:1fr}
 }
 </style>
 </head>
@@ -126,8 +267,8 @@ footer{
 <body>
 
 <header>
-<h1>🚀 Deenu Kataria</h1>
-<p>Free & Useful Online Tools</p>
+<div class="logo">🚀 <span>Deenu Kataria</span> Tools</div>
+<div class="tagline">Free • Fast • Useful Online Tools</div>
 </header>
 
 <nav>
@@ -137,323 +278,1082 @@ footer{
 <a href="#contact">Contact</a>
 </nav>
 
-<div class="container">
+<main class="container">
 
-<section id="home">
-<h2>Welcome 👋</h2>
-<p>Simple and useful online tools by Deenu Kataria.</p>
+<section id="home" class="hero">
+<h1>All Your Useful Tools in One Place</h1>
+<p>
+Text, calculator, developer, finance, image and utility tools —
+created by Deenu Kataria.
+</p>
+
+<input
+class="search"
+id="search"
+placeholder="🔎 Search any tool..."
+oninput="searchTools()"
+>
 </section>
+
+<div class="categories">
+<button class="category" onclick="filterTools('all')">All</button>
+<button class="category" onclick="filterTools('text')">📝 Text</button>
+<button class="category" onclick="filterTools('math')">🧮 Math</button>
+<button class="category" onclick="filterTools('developer')">💻 Developer</button>
+<button class="category" onclick="filterTools('finance')">💰 Finance</button>
+<button class="category" onclick="filterTools('image')">🖼️ Image</button>
+<button class="category" onclick="filterTools('utility')">🛠️ Utility</button>
+</div>
 
 <section id="tools">
 
-<h2>🛠️ All Tools</h2>
+<h2 class="section-title">🛠️ Deenu Kataria Tools</h2>
+<p class="section-sub">Powerful tools that work directly in your browser.</p>
 
-<input
-id="search"
-placeholder="🔎 Search a tool..."
-oninput="searchTools()"
->
+<div class="grid" id="toolGrid">
 
-<div class="grid">
+<!-- WORD COUNTER -->
 
-<div class="card">
+<div class="card tool" data-category="text">
+<span class="badge">TEXT</span>
 <h2>📝 Word Counter</h2>
-<textarea id="wc"></textarea>
+<textarea id="wc" placeholder="Write or paste text..."></textarea>
 <button onclick="wordCount()">Count Words</button>
 <div class="result" id="wr"></div>
 </div>
 
-<div class="card">
+<!-- CHARACTER COUNTER -->
+
+<div class="card tool" data-category="text">
+<span class="badge">TEXT</span>
+<h2>🔤 Character Counter</h2>
+<textarea id="chars" placeholder="Enter text..."></textarea>
+<button onclick="characters()">Count Characters</button>
+<div class="result" id="charresult"></div>
+</div>
+
+<!-- CASE CONVERTER -->
+
+<div class="card tool" data-category="text">
+<span class="badge">TEXT</span>
 <h2>🔠 Case Converter</h2>
-<textarea id="ct"></textarea>
-<button onclick="makeUpper()">UPPERCASE</button>
-<button onclick="makeLower()">lowercase</button>
-<div class="result" id="cr"></div>
+<textarea id="caseText" placeholder="Enter text..."></textarea>
+<button onclick="upper()">UPPERCASE</button>
+<button onclick="lower()">lowercase</button>
+<button onclick="titleCase()">Title Case</button>
+<div class="result" id="caseResult"></div>
 </div>
 
-<div class="card">
-<h2>🔢 Percentage</h2>
-<input id="percent" type="number" placeholder="Percentage">
-<input id="number" type="number" placeholder="Number">
-<button onclick="percentage()">Calculate</button>
-<div class="result" id="pr"></div>
+<!-- REMOVE SPACES -->
+
+<div class="card tool" data-category="text">
+<span class="badge">TEXT</span>
+<h2>🧹 Text Cleaner</h2>
+<textarea id="cleanText" placeholder="Text with extra spaces..."></textarea>
+<button onclick="cleanSpaces()">Remove Extra Spaces</button>
+<div class="result" id="cleanResult"></div>
 </div>
 
-<div class="card">
+<!-- REPEATER -->
+
+<div class="card tool" data-category="text">
+<span class="badge">TEXT</span>
+<h2>🔁 Text Repeater</h2>
+<input id="repeatText" placeholder="Text">
+<input id="repeatNum" type="number" placeholder="Times">
+<button onclick="repeatText()">Repeat</button>
+<div class="result" id="repeatResult"></div>
+</div>
+
+<!-- DUPLICATE REMOVER -->
+
+<div class="card tool" data-category="text">
+<span class="badge">TEXT</span>
+<h2>♻️ Duplicate Line Remover</h2>
+<textarea id="duplicateText" placeholder="One item per line..."></textarea>
+<button onclick="removeDuplicates()">Remove Duplicates</button>
+<div class="result" id="duplicateResult"></div>
+</div>
+
+<!-- CALCULATOR -->
+
+<div class="card tool" data-category="math">
+<span class="badge">MATH</span>
 <h2>🧮 Calculator</h2>
 <input id="calc" placeholder="Example: 25*4+10">
-<button onclick="calculator()">Calculate</button>
-<div class="result" id="calcr"></div>
+<button onclick="calculate()">Calculate</button>
+<div class="result" id="calcResult"></div>
 </div>
 
-<div class="card">
-<h2>🎂 Age Calculator</h2>
-<input id="dob" type="date">
-<button onclick="age()">Calculate Age</button>
-<div class="result" id="ager"></div>
+<!-- PERCENTAGE -->
+
+<div class="card tool" data-category="math">
+<span class="badge">MATH</span>
+<h2>📊 Percentage Calculator</h2>
+<input id="percent" type="number" placeholder="Percentage">
+<input id="percentNumber" type="number" placeholder="Number">
+<button onclick="percentage()">Calculate</button>
+<div class="result" id="percentResult"></div>
 </div>
 
-<div class="card">
-<h2>🔐 Password Generator</h2>
-<button onclick="generatePassword()">Generate Password</button>
-<div class="result" id="pass"></div>
+<!-- DISCOUNT -->
+
+<div class="card tool" data-category="finance">
+<span class="badge">FINANCE</span>
+<h2>🏷️ Discount Calculator</h2>
+<input id="originalPrice" type="number" placeholder="Original Price">
+<input id="discountRate" type="number" placeholder="Discount %">
+<button onclick="discount()">Calculate</button>
+<div class="result" id="discountResult"></div>
 </div>
 
-<div class="card">
-<h2>🎲 Random Number</h2>
-<input id="min" type="number" placeholder="Minimum">
-<input id="max" type="number" placeholder="Maximum">
-<button onclick="randomNum()">Generate</button>
-<div class="result" id="random"></div>
+<!-- GST -->
+
+<div class="card tool" data-category="finance">
+<span class="badge">FINANCE</span>
+<h2>🧾 GST Calculator</h2>
+<input id="gstPrice" type="number" placeholder="Amount">
+<input id="gstRate" type="number" placeholder="GST %">
+<button onclick="gst()">Calculate GST</button>
+<div class="result" id="gstResult"></div>
 </div>
 
-<div class="card">
-<h2>🔁 Text Repeater</h2>
-<input id="rt" placeholder="Text">
-<input id="rn" type="number" placeholder="Times">
-<button onclick="repeat()">Repeat</button>
-<div class="result" id="rr"></div>
+<!-- EMI -->
+
+<div class="card tool" data-category="finance">
+<span class="badge">FINANCE</span>
+<h2>💰 EMI Calculator</h2>
+<input id="loan" type="number" placeholder="Loan Amount">
+<input id="interest" type="number" placeholder="Annual Interest %">
+<input id="months" type="number" placeholder="Months">
+<button onclick="emi()">Calculate EMI</button>
+<div class="result" id="emiResult"></div>
 </div>
 
-<div class="card">
-<h2>🧹 Space Remover</h2>
-<textarea id="st"></textarea>
-<button onclick="cleanSpaces()">Clean</button>
-<div class="result" id="sr"></div>
-</div>
+<!-- BMI -->
 
-<div class="card">
-<h2>📏 KM → Miles</h2>
-<input id="km" type="number" placeholder="Kilometers">
-<button onclick="miles()">Convert</button>
-<div class="result" id="mr"></div>
-</div>
-
-<div class="card">
+<div class="card tool" data-category="utility">
+<span class="badge">UTILITY</span>
 <h2>⚖️ BMI Calculator</h2>
 <input id="height" type="number" placeholder="Height in cm">
 <input id="weight" type="number" placeholder="Weight in kg">
-<button onclick="bmi()">Calculate BMI</button>
-<div class="result" id="bmir"></div>
+<button onclick="bmi()">Calculate</button>
+<div class="result" id="bmiResult"></div>
 </div>
 
-<div class="card">
-<h2>💰 EMI Calculator</h2>
-<input id="loan" type="number" placeholder="Loan Amount">
-<input id="rate" type="number" placeholder="Interest %">
-<input id="months" type="number" placeholder="Months">
-<button onclick="emi()">Calculate EMI</button>
-<div class="result" id="emir"></div>
+<!-- AGE -->
+
+<div class="card tool" data-category="utility">
+<span class="badge">UTILITY</span>
+<h2>🎂 Age Calculator</h2>
+<input id="dob" type="date">
+<button onclick="age()">Calculate Age</button>
+<div class="result" id="ageResult"></div>
 </div>
 
-<div class="card">
-<h2>🧾 GST Calculator</h2>
-<input id="price" type="number" placeholder="Amount">
-<input id="gstRate" type="number" placeholder="GST %">
-<button onclick="gst()">Calculate GST</button>
-<div class="result" id="gstr"></div>
+<!-- RANDOM NUMBER -->
+
+<div class="card tool" data-category="utility">
+<span class="badge">UTILITY</span>
+<h2>🎲 Random Number</h2>
+<input id="randomMin" type="number" placeholder="Minimum">
+<input id="randomMax" type="number" placeholder="Maximum">
+<button onclick="randomNumber()">Generate</button>
+<div class="result" id="randomResult"></div>
 </div>
 
-<div class="card">
-<h2>🔤 Character Counter</h2>
-<textarea id="chars"></textarea>
-<button onclick="characters()">Count</button>
-<div class="result" id="charresult"></div>
+<!-- PASSWORD -->
+
+<div class="card tool" data-category="utility">
+<span class="badge">UTILITY</span>
+<h2>🔐 Password Generator</h2>
+<input id="passLength" type="number" value="16" placeholder="Password length">
+<button onclick="password()">Generate Password</button>
+<div class="result" id="passwordResult"></div>
+</div>
+
+<!-- UUID -->
+
+<div class="card tool" data-category="developer">
+<span class="badge">DEVELOPER</span>
+<h2>🆔 UUID Generator</h2>
+<button onclick="uuid()">Generate UUID</button>
+<div class="result" id="uuidResult"></div>
+</div>
+
+<!-- JSON FORMATTER -->
+
+<div class="card tool" data-category="developer">
+<span class="badge">DEVELOPER</span>
+<h2>{ } JSON Formatter</h2>
+<textarea id="jsonInput" placeholder='{"name":"Deenu","tools":25}'></textarea>
+<button onclick="formatJSON()">Format JSON</button>
+<div class="result" id="jsonResult"></div>
+</div>
+
+<!-- JSON MINIFIER -->
+
+<div class="card tool" data-category="developer">
+<span class="badge">DEVELOPER</span>
+<h2>⚡ JSON Minifier</h2>
+<textarea id="jsonMini" placeholder="Paste JSON..."></textarea>
+<button onclick="minifyJSON()">Minify JSON</button>
+<div class="result" id="jsonMiniResult"></div>
+</div>
+
+<!-- BASE64 -->
+
+<div class="card tool" data-category="developer">
+<span class="badge">DEVELOPER</span>
+<h2>🔐 Base64 Encoder</h2>
+<textarea id="base64Input" placeholder="Enter text..."></textarea>
+<button onclick="encodeBase64()">Encode</button>
+<div class="result" id="base64Result"></div>
+</div>
+
+<!-- BASE64 DECODER -->
+
+<div class="card tool" data-category="developer">
+<span class="badge">DEVELOPER</span>
+<h2>🔓 Base64 Decoder</h2>
+<textarea id="base64DecodeInput" placeholder="Enter Base64..."></textarea>
+<button onclick="decodeBase64()">Decode</button>
+<div class="result" id="base64DecodeResult"></div>
+</div>
+
+<!-- URL ENCODER -->
+
+<div class="card tool" data-category="developer">
+<span class="badge">DEVELOPER</span>
+<h2>🔗 URL Encoder</h2>
+<textarea id="urlInput" placeholder="Enter URL or text..."></textarea>
+<button onclick="encodeURL()">Encode URL</button>
+<div class="result" id="urlResult"></div>
+</div>
+
+<!-- URL DECODER -->
+
+<div class="card tool" data-category="developer">
+<span class="badge">DEVELOPER</span>
+<h2>🔗 URL Decoder</h2>
+<textarea id="urlDecodeInput" placeholder="Encoded URL..."></textarea>
+<button onclick="decodeURL()">Decode URL</button>
+<div class="result" id="urlDecodeResult"></div>
+</div>
+
+<!-- KM MILES -->
+
+<div class="card tool" data-category="utility">
+<span class="badge">UTILITY</span>
+<h2>📏 KM → Miles</h2>
+<input id="km" type="number" placeholder="Kilometers">
+<button onclick="kmMiles()">Convert</button>
+<div class="result" id="kmResult"></div>
+</div>
+
+<!-- MILES KM -->
+
+<div class="card tool" data-category="utility">
+<span class="badge">UTILITY</span>
+<h2>📏 Miles → KM</h2>
+<input id="milesInput" type="number" placeholder="Miles">
+<button onclick="milesKm()">Convert</button>
+<div class="result" id="milesResult"></div>
+</div>
+
+<!-- CELSIUS -->
+
+<div class="card tool" data-category="utility">
+<span class="badge">UTILITY</span>
+<h2>🌡️ Celsius → Fahrenheit</h2>
+<input id="celsius" type="number" placeholder="Celsius">
+<button onclick="cToF()">Convert</button>
+<div class="result" id="celsiusResult"></div>
+</div>
+
+<!-- FAHRENHEIT -->
+
+<div class="card tool" data-category="utility">
+<span class="badge">UTILITY</span>
+<h2>🌡️ Fahrenheit → Celsius</h2>
+<input id="fahrenheit" type="number" placeholder="Fahrenheit">
+<button onclick="fToC()">Convert</button>
+<div class="result" id="fahrenheitResult"></div>
+</div>
+
+<!-- IMAGE INFO -->
+
+<div class="card tool" data-category="image">
+<span class="badge">IMAGE</span>
+<h2>🖼️ Image Information</h2>
+<input id="imageFile" type="file" accept="image/*">
+<button onclick="imageInfo()">Get Image Info</button>
+<div class="result" id="imageResult"></div>
+</div>
+
+<!-- IMAGE RESIZE -->
+
+<div class="card tool" data-category="image">
+<span class="badge">IMAGE</span>
+<h2>📐 Image Resize</h2>
+<input id="resizeFile" type="file" accept="image/*">
+<input id="resizeWidth" type="number" placeholder="New width in pixels">
+<button onclick="resizeImage()">Resize & Download</button>
+<div class="result" id="resizeResult"></div>
+</div>
+
+<!-- IMAGE COMPRESS -->
+
+<div class="card tool" data-category="image">
+<span class="badge">IMAGE</span>
+<h2>🗜️ Image Compressor</h2>
+<input id="compressFile" type="file" accept="image/*">
+<input id="quality" type="number" min="10" max="100" value="70" placeholder="Quality 10-100">
+<button onclick="compressImage()">Compress & Download</button>
+<div class="result" id="compressResult"></div>
+</div>
+
+<!-- TEXT SORTER -->
+
+<div class="card tool" data-category="text">
+<span class="badge">TEXT</span>
+<h2>🔤 Text Sorter</h2>
+<textarea id="sortInput" placeholder="One item per line..."></textarea>
+<button onclick="sortText()">Sort A → Z</button>
+<div class="result" id="sortResult"></div>
+</div>
+
+<!-- LINE COUNTER -->
+
+<div class="card tool" data-category="text">
+<span class="badge">TEXT</span>
+<h2>📄 Line Counter</h2>
+<textarea id="lineInput" placeholder="Enter multiple lines..."></textarea>
+<button onclick="countLines()">Count Lines</button>
+<div class="result" id="lineResult"></div>
 </div>
 
 </div>
 </section>
 
 <section id="about">
-<h2>ℹ️ About</h2>
+<div class="about">
+<h2>ℹ️ About Deenu Kataria Tools</h2>
 <p>
-Deenu Kataria Tools provides simple and useful
-online tools for everyday use.
+Deenu Kataria Tools is a collection of free and useful online
+tools designed for students, creators, developers and everyday users.
 </p>
+<p>
+Our goal is to make useful digital tools simple, fast and accessible.
+</p>
+</div>
 </section>
 
 <section id="contact">
+<div class="about">
 <h2>📩 Contact</h2>
 <p>Email: your@email.com</p>
 <p>Phone: +91 XXXXXXXXXX</p>
+</div>
 </section>
 
-</div>
+</main>
 
 <footer>
-© 2026 Deenu Kataria
+© 2026 <strong>Deenu Kataria</strong> — All Rights Reserved.
 </footer>
 
 <script>
 
-function searchTools(){
-let s=document.getElementById("search").value.toLowerCase();
+/* SEARCH */
 
-document.querySelectorAll(".card").forEach(card=>{
+function searchTools(){
+
+let value=document.getElementById("search").value.toLowerCase();
+
+document.querySelectorAll(".tool").forEach(card=>{
+
 card.style.display=
-card.innerText.toLowerCase().includes(s) ? "" : "none";
+card.innerText.toLowerCase().includes(value)
+?"":"none";
+
 });
+
 }
+
+/* CATEGORY */
+
+function filterTools(category){
+
+document.querySelectorAll(".tool").forEach(card=>{
+
+if(category==="all"){
+card.style.display="";
+}
+else{
+card.style.display=
+card.dataset.category===category?"":"none";
+}
+
+});
+
+}
+
+/* WORD COUNT */
 
 function wordCount(){
-let t=document.getElementById("wc").value.trim();
+
+let text=document.getElementById("wc").value.trim();
+
+let words=text?text.split(/\s+/).length:0;
 
 document.getElementById("wr").innerText=
-"Words: " + (t ? t.split(/\s+/).length : 0);
+"Words: "+words;
+
 }
 
-function makeUpper(){
-document.getElementById("cr").innerText=
-document.getElementById("ct").value.toUpperCase();
-}
-
-function makeLower(){
-document.getElementById("cr").innerText=
-document.getElementById("ct").value.toLowerCase();
-}
-
-function percentage(){
-let p=Number(document.getElementById("percent").value);
-let n=Number(document.getElementById("number").value);
-
-document.getElementById("pr").innerText=
-p*n/100;
-}
-
-function calculator(){
-try{
-document.getElementById("calcr").innerText=
-Function("return " +
-document.getElementById("calc").value)();
-}
-catch{
-document.getElementById("calcr").innerText=
-"Invalid calculation";
-}
-}
-
-function age(){
-
-let d=new Date(document.getElementById("dob").value);
-let t=new Date();
-
-let a=t.getFullYear()-d.getFullYear();
-
-if(
-t.getMonth()<d.getMonth() ||
-(t.getMonth()==d.getMonth() &&
-t.getDate()<d.getDate())
-){
-a--;
-}
-
-document.getElementById("ager").innerText=
-"Age: " + a + " years";
-}
-
-function generatePassword(){
-
-let c=
-"ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789!@#$%^&*";
-
-let p="";
-
-for(let i=0;i<12;i++){
-p+=c[Math.floor(Math.random()*c.length)];
-}
-
-document.getElementById("pass").innerText=p;
-}
-
-function randomNum(){
-
-let a=Number(document.getElementById("min").value);
-let b=Number(document.getElementById("max").value);
-
-document.getElementById("random").innerText=
-Math.floor(Math.random()*(b-a+1))+a;
-}
-
-function repeat(){
-
-let t=document.getElementById("rt").value;
-let n=Number(document.getElementById("rn").value);
-
-document.getElementById("rr").innerText=
-Array(n).fill(t).join(" ");
-}
-
-function cleanSpaces(){
-
-let t=document.getElementById("st").value;
-
-document.getElementById("sr").innerText=
-t.trim().replace(/\s+/g," ");
-}
-
-function miles(){
-
-let k=Number(document.getElementById("km").value);
-
-document.getElementById("mr").innerText=
-(k*0.621371).toFixed(2)+" miles";
-}
-
-function bmi(){
-
-let h=
-Number(document.getElementById("height").value)/100;
-
-let w=
-Number(document.getElementById("weight").value);
-
-document.getElementById("bmir").innerText=
-"BMI: " + (w/(h*h)).toFixed(2);
-}
-
-function emi(){
-
-let p=Number(document.getElementById("loan").value);
-
-let r=
-Number(document.getElementById("rate").value)/1200;
-
-let n=
-Number(document.getElementById("months").value);
-
-let e=
-r
-?
-p*r*Math.pow(1+r,n)/
-(Math.pow(1+r,n)-1)
-:
-p/n;
-
-document.getElementById("emir").innerText=
-"EMI: ₹" + e.toFixed(2);
-}
-
-function gst(){
-
-let p=Number(document.getElementById("price").value);
-let r=Number(document.getElementById("gstRate").value);
-
-let g=p*r/100;
-
-document.getElementById("gstr").innerText=
-"GST: ₹"+g.toFixed(2)+
-" | Total: ₹"+(p+g).toFixed(2);
-}
+/* CHARACTERS */
 
 function characters(){
 
-let t=document.getElementById("chars").value;
+let text=document.getElementById("chars").value;
 
 document.getElementById("charresult").innerText=
-"Characters: " + t.length;
+"Characters: "+text.length;
+
+}
+
+/* CASE */
+
+function upper(){
+
+document.getElementById("caseResult").innerText=
+document.getElementById("caseText").value.toUpperCase();
+
+}
+
+function lower(){
+
+document.getElementById("caseResult").innerText=
+document.getElementById("caseText").value.toLowerCase();
+
+}
+
+function titleCase(){
+
+let text=document.getElementById("caseText").value;
+
+document.getElementById("caseResult").innerText=
+text.toLowerCase().replace(/\b\w/g,c=>c.toUpperCase());
+
+}
+
+/* CLEAN */
+
+function cleanSpaces(){
+
+let text=document.getElementById("cleanText").value;
+
+document.getElementById("cleanResult").innerText=
+text.trim().replace(/\s+/g," ");
+
+}
+
+/* REPEAT */
+
+function repeatText(){
+
+let text=document.getElementById("repeatText").value;
+
+let number=Number(document.getElementById("repeatNum").value);
+
+if(number<1){
+document.getElementById("repeatResult").innerText="Enter a valid number.";
+return;
+}
+
+if(number>1000){
+document.getElementById("repeatResult").innerText="Maximum 1000 repetitions.";
+return;
+}
+
+document.getElementById("repeatResult").innerText=
+Array(number).fill(text).join(" ");
+
+}
+
+/* DUPLICATES */
+
+function removeDuplicates(){
+
+let text=document.getElementById("duplicateText").value;
+
+let lines=text.split(/\r?\n/);
+
+let unique=[...new Set(lines)];
+
+document.getElementById("duplicateResult").innerText=
+unique.join("\n");
+
+}
+
+/* CALCULATOR */
+
+function calculate(){
+
+let expression=document.getElementById("calc").value.trim();
+
+if(!/^[0-9+\-*/().%\s]+$/.test(expression)){
+document.getElementById("calcResult").innerText=
+"Only numbers and basic operators are allowed.";
+return;
+}
+
+try{
+
+let result=Function(
+'"use strict";return ('+expression+')'
+)();
+
+document.getElementById("calcResult").innerText=result;
+
+}
+catch{
+
+document.getElementById("calcResult").innerText=
+"Invalid calculation.";
+
+}
+
+}
+
+/* PERCENTAGE */
+
+function percentage(){
+
+let p=Number(document.getElementById("percent").value);
+
+let n=Number(document.getElementById("percentNumber").value);
+
+document.getElementById("percentResult").innerText=
+p+"% of "+n+" = "+(p*n/100);
+
+}
+
+/* DISCOUNT */
+
+function discount(){
+
+let price=Number(document.getElementById("originalPrice").value);
+
+let rate=Number(document.getElementById("discountRate").value);
+
+let saving=price*rate/100;
+
+let finalPrice=price-saving;
+
+document.getElementById("discountResult").innerText=
+"Discount: ₹"+saving.toFixed(2)+
+"\nFinal Price: ₹"+finalPrice.toFixed(2);
+
+}
+
+/* GST */
+
+function gst(){
+
+let price=Number(document.getElementById("gstPrice").value);
+
+let rate=Number(document.getElementById("gstRate").value);
+
+let tax=price*rate/100;
+
+document.getElementById("gstResult").innerText=
+"GST: ₹"+tax.toFixed(2)+
+"\nTotal: ₹"+(price+tax).toFixed(2);
+
+}
+
+/* EMI */
+
+function emi(){
+
+let principal=Number(document.getElementById("loan").value);
+
+let annualRate=Number(document.getElementById("interest").value);
+
+let n=Number(document.getElementById("months").value);
+
+let monthlyRate=annualRate/1200;
+
+let payment;
+
+if(monthlyRate===0){
+payment=principal/n;
+}
+else{
+payment=
+principal*monthlyRate*
+Math.pow(1+monthlyRate,n)/
+(Math.pow(1+monthlyRate,n)-1);
+}
+
+document.getElementById("emiResult").innerText=
+"Monthly EMI: ₹"+payment.toFixed(2);
+
+}
+
+/* BMI */
+
+function bmi(){
+
+let height=Number(document.getElementById("height").value)/100;
+
+let weight=Number(document.getElementById("weight").value);
+
+if(height<=0||weight<=0){
+document.getElementById("bmiResult").innerText="Enter valid values.";
+return;
+}
+
+let value=weight/(height*height);
+
+document.getElementById("bmiResult").innerText=
+"BMI: "+value.toFixed(2);
+
+}
+
+/* AGE */
+
+function age(){
+
+let birth=new Date(document.getElementById("dob").value);
+
+if(isNaN(birth)){
+document.getElementById("ageResult").innerText=
+"Please select your date of birth.";
+return;
+}
+
+let today=new Date();
+
+let years=today.getFullYear()-birth.getFullYear();
+
+let month=today.getMonth()-birth.getMonth();
+
+if(month<0 || (month===0 && today.getDate()<birth.getDate())){
+years--;
+}
+
+document.getElementById("ageResult").innerText=
+"Age: "+years+" years";
+
+}
+
+/* RANDOM */
+
+function randomNumber(){
+
+let min=Number(document.getElementById("randomMin").value);
+
+let max=Number(document.getElementById("randomMax").value);
+
+if(min>max){
+[min,max]=[max,min];
+}
+
+let result=
+Math.floor(Math.random()*(max-min+1))+min;
+
+document.getElementById("randomResult").innerText=result;
+
+}
+
+/* PASSWORD */
+
+function password(){
+
+let length=Number(document.getElementById("passLength").value);
+
+if(length<4) length=4;
+
+if(length>100) length=100;
+
+let chars=
+"ABCDEFGHIJKLMNOPQRSTUVWXYZ"+
+"abcdefghijklmnopqrstuvwxyz"+
+"0123456789"+
+"!@#$%^&*";
+
+let result="";
+
+for(let i=0;i<length;i++){
+
+result+=chars[
+Math.floor(Math.random()*chars.length)
+];
+
+}
+
+document.getElementById("passwordResult").innerText=result;
+
+}
+
+/* UUID */
+
+function uuid(){
+
+let result=crypto.randomUUID
+?crypto.randomUUID()
+:"xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx".replace(/[xy]/g,function(c){
+
+let r=Math.random()*16|0;
+
+let v=c==="x"?r:(r&0x3|0x8);
+
+return v.toString(16);
+
+});
+
+document.getElementById("uuidResult").innerText=result;
+
+}
+
+/* JSON FORMAT */
+
+function formatJSON(){
+
+try{
+
+let data=JSON.parse(
+document.getElementById("jsonInput").value
+);
+
+document.getElementById("jsonResult").innerText=
+JSON.stringify(data,null,2);
+
+}
+catch{
+
+document.getElementById("jsonResult").innerText=
+"Invalid JSON.";
+
+}
+
+}
+
+/* JSON MINIFY */
+
+function minifyJSON(){
+
+try{
+
+let data=JSON.parse(
+document.getElementById("jsonMini").value
+);
+
+document.getElementById("jsonMiniResult").innerText=
+JSON.stringify(data);
+
+}
+catch{
+
+document.getElementById("jsonMiniResult").innerText=
+"Invalid JSON.";
+
+}
+
+}
+
+/* BASE64 */
+
+function encodeBase64(){
+
+let text=document.getElementById("base64Input").value;
+
+try{
+
+let bytes=new TextEncoder().encode(text);
+
+let binary="";
+
+bytes.forEach(b=>binary+=String.fromCharCode(b));
+
+document.getElementById("base64Result").innerText=
+btoa(binary);
+
+}
+catch{
+
+document.getElementById("base64Result").innerText=
+"Unable to encode.";
+
+}
+
+}
+
+function decodeBase64(){
+
+try{
+
+let binary=atob(
+document.getElementById("base64DecodeInput").value
+);
+
+let bytes=Uint8Array.from(binary,c=>c.charCodeAt(0));
+
+document.getElementById("base64DecodeResult").innerText=
+new TextDecoder().decode(bytes);
+
+}
+catch{
+
+document.getElementById("base64DecodeResult").innerText=
+"Invalid Base64.";
+
+}
+
+}
+
+/* URL */
+
+function encodeURL(){
+
+let text=document.getElementById("urlInput").value;
+
+document.getElementById("urlResult").innerText=
+encodeURIComponent(text);
+
+}
+
+function decodeURL(){
+
+try{
+
+let text=document.getElementById("urlDecodeInput").value;
+
+document.getElementById("urlDecodeResult").innerText=
+decodeURIComponent(text);
+
+}
+catch{
+
+document.getElementById("urlDecodeResult").innerText=
+"Invalid encoded URL.";
+
+}
+
+}
+
+/* CONVERTERS */
+
+function kmMiles(){
+
+let km=Number(document.getElementById("km").value);
+
+document.getElementById("kmResult").innerText=
+(km*0.621371).toFixed(4)+" miles";
+
+}
+
+function milesKm(){
+
+let miles=Number(document.getElementById("milesInput").value);
+
+document.getElementById("milesResult").innerText=
+(miles*1.609344).toFixed(4)+" km";
+
+}
+
+function cToF(){
+
+let c=Number(document.getElementById("celsius").value);
+
+document.getElementById("celsiusResult").innerText=
+((c*9/5)+32).toFixed(2)+" °F";
+
+}
+
+function fToC(){
+
+let f=Number(document.getElementById("fahrenheit").value);
+
+document.getElementById("fahrenheitResult").innerText=
+((f-32)*5/9).toFixed(2)+" °C";
+
+}
+
+/* IMAGE INFORMATION */
+
+function imageInfo(){
+
+let file=document.getElementById("imageFile").files[0];
+
+if(!file){
+document.getElementById("imageResult").innerText=
+"Choose an image first.";
+return;
+}
+
+let img=new Image();
+
+img.onload=function(){
+
+document.getElementById("imageResult").innerText=
+"File: "+file.name+
+"\nSize: "+(file.size/1024).toFixed(2)+" KB"+
+"\nWidth: "+img.width+" px"+
+"\nHeight: "+img.height+" px"+
+"\nType: "+file.type;
+
+};
+
+img.src=URL.createObjectURL(file);
+
+}
+
+/* IMAGE RESIZE */
+
+function resizeImage(){
+
+let file=document.getElementById("resizeFile").files[0];
+
+let width=Number(
+document.getElementById("resizeWidth").value
+);
+
+if(!file||!width){
+document.getElementById("resizeResult").innerText=
+"Choose image and enter width.";
+return;
+}
+
+let img=new Image();
+
+img.onload=function(){
+
+let ratio=img.height/img.width;
+
+let height=Math.round(width*ratio);
+
+let canvas=document.createElement("canvas");
+
+canvas.width=width;
+canvas.height=height;
+
+let ctx=canvas.getContext("2d");
+
+ctx.drawImage(img,0,0,width,height);
+
+canvas.toBlob(function(blob){
+
+let url=URL.createObjectURL(blob);
+
+let a=document.createElement("a");
+
+a.href=url;
+a.download="deenu-kataria-resized.png";
+
+a.click();
+
+URL.revokeObjectURL(url);
+
+document.getElementById("resizeResult").innerText=
+"Image resized and downloaded.";
+
+},"image/png");
+
+};
+
+img.src=URL.createObjectURL(file);
+
+}
+
+/* IMAGE COMPRESS */
+
+function compressImage(){
+
+let file=document.getElementById("compressFile").files[0];
+
+let quality=
+Number(document.getElementById("quality").value)/100;
+
+if(!file){
+document.getElementById("compressResult").innerText=
+"Choose an image first.";
+return;
+}
+
+if(quality<=0||quality>1) quality=.7;
+
+let img=new Image();
+
+img.onload=function(){
+
+let canvas=document.createElement("canvas");
+
+canvas.width=img.width;
+canvas.height=img.height;
+
+let ctx=canvas.getContext("2d");
+
+ctx.drawImage(img,0,0);
+
+canvas.toBlob(function(blob){
+
+let url=URL.createObjectURL(blob);
+
+let a=document.createElement("a");
+
+a.href=url;
+a.download="deenu-kataria-compressed.jpg";
+
+a.click();
+
+URL.revokeObjectURL(url);
+
+document.getElementById("compressResult").innerText=
+"Compressed image downloaded.";
+
+},"image/jpeg",quality);
+
+};
+
+img.src=URL.createObjectURL(file);
+
+}
+
+/* SORT TEXT */
+
+function sortText(){
+
+let text=document.getElementById("sortInput").value;
+
+let lines=text.split(/\r?\n/);
+
+lines.sort((a,b)=>
+a.localeCompare(b,undefined,{sensitivity:"base"})
+);
+
+document.getElementById("sortResult").innerText=
+lines.join("\n");
+
+}
+
+/* LINE COUNT */
+
+function countLines(){
+
+let text=document.getElementById("lineInput").value;
+
+let lines=text?text.split(/\r?\n/).length:0;
+
+document.getElementById("lineResult").innerText=
+"Lines: "+lines;
+
 }
 
 </script>
 
 </body>
-  </html>
+                                                             </html>
