@@ -3,43 +3,58 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 <title>Deenu Kataria Tools</title>
 
 <style>
-*{box-sizing:border-box}
+*{
+  box-sizing:border-box;
+}
+
 body{
   margin:0;
   font-family:Arial,sans-serif;
   background:#0f172a;
-  color:#f8fafc;
+  color:white;
 }
+
 header{
   text-align:center;
   padding:35px 15px;
   background:#111827;
 }
-header h1{margin:0;font-size:32px}
-header p{color:#94a3b8}
+
+header h1{
+  margin:0;
+  font-size:32px;
+}
+
+header p{
+  color:#94a3b8;
+}
+
 nav{
+  background:#020617;
+  padding:15px;
+  text-align:center;
   position:sticky;
   top:0;
-  z-index:10;
-  background:#020617;
-  padding:14px;
-  text-align:center;
 }
+
 nav a{
-  color:#fff;
+  color:white;
   text-decoration:none;
-  margin:0 10px;
+  margin:0 12px;
   font-weight:bold;
 }
+
 .container{
   max-width:1100px;
   margin:auto;
   padding:20px;
 }
-.search{
+
+#search{
   width:100%;
   padding:15px;
   border:0;
@@ -47,46 +62,58 @@ nav a{
   margin-bottom:25px;
   font-size:16px;
 }
+
 .grid{
   display:grid;
   grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
   gap:18px;
 }
+
 .card{
   background:#1e293b;
   padding:20px;
-  border-radius:16px;
-  box-shadow:0 5px 20px rgba(0,0,0,.2);
+  border-radius:15px;
 }
-.card h2{font-size:20px}
-input,textarea,select{
+
+.card h2{
+  margin-top:0;
+}
+
+input,textarea{
   width:100%;
   padding:11px;
-  margin:6px 0;
+  margin:5px 0;
   border:0;
   border-radius:8px;
 }
-textarea{min-height:100px}
+
+textarea{
+  min-height:100px;
+}
+
 button{
   width:100%;
   padding:11px;
   margin-top:7px;
   border:0;
   border-radius:8px;
-  cursor:pointer;
   font-weight:bold;
+  cursor:pointer;
 }
+
 .result{
   margin-top:10px;
   padding:10px;
   background:#0f172a;
   border-radius:8px;
   min-height:20px;
-  word-wrap:break-word;
+  word-break:break-word;
 }
+
 section{
-  padding:35px 0;
+  padding:30px 0;
 }
+
 footer{
   text-align:center;
   padding:30px;
@@ -100,7 +127,7 @@ footer{
 
 <header>
 <h1>🚀 Deenu Kataria</h1>
-<p>Free & Useful Online Tools — Simple, Fast & Easy</p>
+<p>Free & Useful Online Tools</p>
 </header>
 
 <nav>
@@ -114,12 +141,319 @@ footer{
 
 <section id="home">
 <h2>Welcome 👋</h2>
-<p>Useful online tools — completely simple and easy to use.</p>
+<p>Simple and useful online tools by Deenu Kataria.</p>
 </section>
 
 <section id="tools">
+
 <h2>🛠️ All Tools</h2>
 
-<input class="search" id="search" placeholder="🔎 Search a tool..." oninput="searchTools()">
+<input
+id="search"
+placeholder="🔎 Search a tool..."
+oninput="searchTools()"
+>
 
-<div
+<div class="grid">
+
+<div class="card">
+<h2>📝 Word Counter</h2>
+<textarea id="wc"></textarea>
+<button onclick="wordCount()">Count Words</button>
+<div class="result" id="wr"></div>
+</div>
+
+<div class="card">
+<h2>🔠 Case Converter</h2>
+<textarea id="ct"></textarea>
+<button onclick="makeUpper()">UPPERCASE</button>
+<button onclick="makeLower()">lowercase</button>
+<div class="result" id="cr"></div>
+</div>
+
+<div class="card">
+<h2>🔢 Percentage</h2>
+<input id="percent" type="number" placeholder="Percentage">
+<input id="number" type="number" placeholder="Number">
+<button onclick="percentage()">Calculate</button>
+<div class="result" id="pr"></div>
+</div>
+
+<div class="card">
+<h2>🧮 Calculator</h2>
+<input id="calc" placeholder="Example: 25*4+10">
+<button onclick="calculator()">Calculate</button>
+<div class="result" id="calcr"></div>
+</div>
+
+<div class="card">
+<h2>🎂 Age Calculator</h2>
+<input id="dob" type="date">
+<button onclick="age()">Calculate Age</button>
+<div class="result" id="ager"></div>
+</div>
+
+<div class="card">
+<h2>🔐 Password Generator</h2>
+<button onclick="generatePassword()">Generate Password</button>
+<div class="result" id="pass"></div>
+</div>
+
+<div class="card">
+<h2>🎲 Random Number</h2>
+<input id="min" type="number" placeholder="Minimum">
+<input id="max" type="number" placeholder="Maximum">
+<button onclick="randomNum()">Generate</button>
+<div class="result" id="random"></div>
+</div>
+
+<div class="card">
+<h2>🔁 Text Repeater</h2>
+<input id="rt" placeholder="Text">
+<input id="rn" type="number" placeholder="Times">
+<button onclick="repeat()">Repeat</button>
+<div class="result" id="rr"></div>
+</div>
+
+<div class="card">
+<h2>🧹 Space Remover</h2>
+<textarea id="st"></textarea>
+<button onclick="cleanSpaces()">Clean</button>
+<div class="result" id="sr"></div>
+</div>
+
+<div class="card">
+<h2>📏 KM → Miles</h2>
+<input id="km" type="number" placeholder="Kilometers">
+<button onclick="miles()">Convert</button>
+<div class="result" id="mr"></div>
+</div>
+
+<div class="card">
+<h2>⚖️ BMI Calculator</h2>
+<input id="height" type="number" placeholder="Height in cm">
+<input id="weight" type="number" placeholder="Weight in kg">
+<button onclick="bmi()">Calculate BMI</button>
+<div class="result" id="bmir"></div>
+</div>
+
+<div class="card">
+<h2>💰 EMI Calculator</h2>
+<input id="loan" type="number" placeholder="Loan Amount">
+<input id="rate" type="number" placeholder="Interest %">
+<input id="months" type="number" placeholder="Months">
+<button onclick="emi()">Calculate EMI</button>
+<div class="result" id="emir"></div>
+</div>
+
+<div class="card">
+<h2>🧾 GST Calculator</h2>
+<input id="price" type="number" placeholder="Amount">
+<input id="gstRate" type="number" placeholder="GST %">
+<button onclick="gst()">Calculate GST</button>
+<div class="result" id="gstr"></div>
+</div>
+
+<div class="card">
+<h2>🔤 Character Counter</h2>
+<textarea id="chars"></textarea>
+<button onclick="characters()">Count</button>
+<div class="result" id="charresult"></div>
+</div>
+
+</div>
+</section>
+
+<section id="about">
+<h2>ℹ️ About</h2>
+<p>
+Deenu Kataria Tools provides simple and useful
+online tools for everyday use.
+</p>
+</section>
+
+<section id="contact">
+<h2>📩 Contact</h2>
+<p>Email: your@email.com</p>
+<p>Phone: +91 XXXXXXXXXX</p>
+</section>
+
+</div>
+
+<footer>
+© 2026 Deenu Kataria
+</footer>
+
+<script>
+
+function searchTools(){
+let s=document.getElementById("search").value.toLowerCase();
+
+document.querySelectorAll(".card").forEach(card=>{
+card.style.display=
+card.innerText.toLowerCase().includes(s) ? "" : "none";
+});
+}
+
+function wordCount(){
+let t=document.getElementById("wc").value.trim();
+
+document.getElementById("wr").innerText=
+"Words: " + (t ? t.split(/\s+/).length : 0);
+}
+
+function makeUpper(){
+document.getElementById("cr").innerText=
+document.getElementById("ct").value.toUpperCase();
+}
+
+function makeLower(){
+document.getElementById("cr").innerText=
+document.getElementById("ct").value.toLowerCase();
+}
+
+function percentage(){
+let p=Number(document.getElementById("percent").value);
+let n=Number(document.getElementById("number").value);
+
+document.getElementById("pr").innerText=
+p*n/100;
+}
+
+function calculator(){
+try{
+document.getElementById("calcr").innerText=
+Function("return " +
+document.getElementById("calc").value)();
+}
+catch{
+document.getElementById("calcr").innerText=
+"Invalid calculation";
+}
+}
+
+function age(){
+
+let d=new Date(document.getElementById("dob").value);
+let t=new Date();
+
+let a=t.getFullYear()-d.getFullYear();
+
+if(
+t.getMonth()<d.getMonth() ||
+(t.getMonth()==d.getMonth() &&
+t.getDate()<d.getDate())
+){
+a--;
+}
+
+document.getElementById("ager").innerText=
+"Age: " + a + " years";
+}
+
+function generatePassword(){
+
+let c=
+"ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789!@#$%^&*";
+
+let p="";
+
+for(let i=0;i<12;i++){
+p+=c[Math.floor(Math.random()*c.length)];
+}
+
+document.getElementById("pass").innerText=p;
+}
+
+function randomNum(){
+
+let a=Number(document.getElementById("min").value);
+let b=Number(document.getElementById("max").value);
+
+document.getElementById("random").innerText=
+Math.floor(Math.random()*(b-a+1))+a;
+}
+
+function repeat(){
+
+let t=document.getElementById("rt").value;
+let n=Number(document.getElementById("rn").value);
+
+document.getElementById("rr").innerText=
+Array(n).fill(t).join(" ");
+}
+
+function cleanSpaces(){
+
+let t=document.getElementById("st").value;
+
+document.getElementById("sr").innerText=
+t.trim().replace(/\s+/g," ");
+}
+
+function miles(){
+
+let k=Number(document.getElementById("km").value);
+
+document.getElementById("mr").innerText=
+(k*0.621371).toFixed(2)+" miles";
+}
+
+function bmi(){
+
+let h=
+Number(document.getElementById("height").value)/100;
+
+let w=
+Number(document.getElementById("weight").value);
+
+document.getElementById("bmir").innerText=
+"BMI: " + (w/(h*h)).toFixed(2);
+}
+
+function emi(){
+
+let p=Number(document.getElementById("loan").value);
+
+let r=
+Number(document.getElementById("rate").value)/1200;
+
+let n=
+Number(document.getElementById("months").value);
+
+let e=
+r
+?
+p*r*Math.pow(1+r,n)/
+(Math.pow(1+r,n)-1)
+:
+p/n;
+
+document.getElementById("emir").innerText=
+"EMI: ₹" + e.toFixed(2);
+}
+
+function gst(){
+
+let p=Number(document.getElementById("price").value);
+let r=Number(document.getElementById("gstRate").value);
+
+let g=p*r/100;
+
+document.getElementById("gstr").innerText=
+"GST: ₹"+g.toFixed(2)+
+" | Total: ₹"+(p+g).toFixed(2);
+}
+
+function characters(){
+
+let t=document.getElementById("chars").value;
+
+document.getElementById("charresult").innerText=
+"Characters: " + t.length;
+}
+
+</script>
+
+</body>
+  </html>
